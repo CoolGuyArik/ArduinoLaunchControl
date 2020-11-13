@@ -135,17 +135,17 @@ void startFlash(int noFlashes) {
     delay(2000);
     lcd.clear();
     lcd.print("lcd mod by ");
-    lcd.setCursor(12, 1);
-    lcd.print("rAik");
+    lcd.setCursor(5, 1);
+    lcd.print("loCouyGrAik");
     delay(200);
-    lcd.setCursor(12, 1);
-    lcd.print("ikrA");
+    lcd.setCursor(5, 1);
+    lcd.print("olCoGyuikrA");
     delay(200);
-    lcd.setCursor(12, 1);
-    lcd.print("Akri");
+    lcd.setCursor(5, 1);
+    lcd.print("ColoyuGAkri");
     delay(200);
-    lcd.setCursor(12, 1);
-    lcd.print("Arik");
+    lcd.setCursor(5, 1);
+    lcd.print("CoolGuyArik");
     delay(1000);
     for (int i = 0; i <= 16; i++) {
       lcd.setCursor(-1 + i, 0);
