@@ -134,7 +134,7 @@ void startFlash(int noFlashes) {
     lcd.print("korn101");
     delay(2000);
     lcd.clear();
-    lcd.print("lcd mod by ");
+    lcd.print("LCD mod by ");
     lcd.setCursor(5, 1);
     lcd.print("loCouyGrAik");
     delay(200);
