@@ -247,10 +247,8 @@ void enableSystem() {
     lcd.print(" ");
     delay(20);
   }
-
-
+  delay(50);
   displayCurrentRevLimit();
-
 }
 
 void disableSystem() {
@@ -276,41 +274,44 @@ void disableSystem() {
     lcd.print(" ");
     delay(20);
   }
+  delay(50);
   displayCurrentRevLimit();
-}
+}   
+
 
 void displayCurrentHarshness() {
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("//Delay");
+  lcd.setCursor(0, 2);
+  lcd.print(cutHarshnessFactor);
   for (int i = 0; i < cutHarshnessFactor; i++) {
     digitalWrite(led1, LOW);
     delay(100);
     digitalWrite(led1, HIGH);
     delay(100);
     digitalWrite(led1, LOW);
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("//Delay");
-    lcd.setCursor(0, 2);
-    lcd.print(cutHarshnessFactor);
   }
 }
-
+   
+   
 void displayCurrentRevLimit() {
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("//Rev Limit");
+  lcd.setCursor(0, 1);
+  lcd.print(revLimitRpm);
+  lcd.setCursor(4, 1);
+  lcd.print("rpm");
   for (int i = 0; i < revLimitRpm / 1000; i++) {
     digitalWrite(led1, LOW);
     delay(100);
     digitalWrite(led1, HIGH);
     delay(100);
     digitalWrite(led1, LOW);
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("//Rev Limit");
-    lcd.setCursor(0, 1);
-    lcd.print(revLimitRpm);
-    lcd.setCursor(4, 1);
-    lcd.print("rpm");
   }
 }
-
+   
 
 void changeCutHarshness() {
   // Change the cutHarshnessFactor to delay the spark cut for longer (make more jerky rev limiter = more flames)
@@ -322,7 +323,6 @@ void changeCutHarshness() {
   displayCurrentHarshness();
   // Save this setting to EEPROM.
   saveHarshness();
-
 }
 
 void changeMode() {
