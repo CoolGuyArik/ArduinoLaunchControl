@@ -287,7 +287,7 @@ void displayCurrentHarshness() {
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("//Delay");
-  lcd.setCursor(0, 2);
+  lcd.setCursor(0, 1);
   lcd.print(cutHarshnessFactor);
   for (int i = 0; i < cutHarshnessFactor; i++) {
     digitalWrite(led1, LOW);
